@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: konsear-app
+  labels:
+    app: konsear
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: konsear
+  template:
+    metadata:
+      labels:
+        app: konsear
+    spec:
+      containers:
+      - name: konsear
+        image: konsear:5.6
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+
