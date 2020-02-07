@@ -1,4 +1,8 @@
 node {
+        environment {
+            registry = "acrncpltest.azurecr.io/konsear/jenkins"
+            registryCredential = ‘8686ddcb-10a5-4365-b860-9bc70ab04977’
+}
       // Mark the code checkout 'stage'....
         stage('Checkout the dockefile from GitHub') {
             git branch: 'master', credentialsId: 'venbollineni-7366', url: 'https://github.com/bollineni36/jenkins-pipeline-kubernetes.git'
