@@ -100,8 +100,10 @@ RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/Allo
 #RUN chown -R www-data:www-data /var/www
 #RUN chmod 755 -R /var/www
 #removing all the unwanted resources.
+RUN rm -Rf /etc/php/*
+COPY ./conf/php/* /etc/php/
 RUN rm -R /var/www/html/*
-ADD ./app/* /var/www/html/
+COPY ./app/* /var/www/html/
 # copy the code from host to image
 #ADD app/* /var/www/html/
 # applying privileges to the corresponding directory
@@ -122,5 +124,4 @@ CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
 
 # NB : si update image and commit, do :
 # docker commit -m "changes" --change "ENV TERM xterm" --change "CMD /usr/sbin/apache2ctl -DFOREGROUND" dc5239032732 apache-php-dev
-
 

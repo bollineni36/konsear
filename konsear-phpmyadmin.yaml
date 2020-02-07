@@ -12,7 +12,7 @@ spec:
         - name: PMA_ARBITRARY
           value: "1"
         - name: PMA_HOST
-          value: 172.17.0.19
+          value: 127.0.0.1
           #        - name: PMA_VERBOSE
           #value: test
           #- name: PMA_USER

@@ -22,18 +22,18 @@ ini_set("display_errors", 1);
 	} else {
 		
 		//IF LOCAL SET TO FALSE USE THE FOLLOWING LIVE DB SETTINGS
-		define('DB_HOST', '172.17.0.19');
+		define('DB_HOST', 'testmysql');
 
-		define('DB_USER', 'root');
+		define('DB_USER', 'konsear');
 
-		define('DB_PWD', 'password');
+		define('DB_PWD', 'Thanks@5366');
 
 		define('DB_NAME', 'konsear_db_stage');
 
 	}
 
 
- 	define('BASE_URL', LOCAL ? 'http://localhost/konsear_ncinc/' : 'http://54.183.66.42:30095/');
+ 	define('BASE_URL', LOCAL ? 'http://localhost/konsear_ncinc/' : 'http://20.42.24.16/');
 
 
 ?>

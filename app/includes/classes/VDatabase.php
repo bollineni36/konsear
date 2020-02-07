@@ -7,13 +7,7 @@ class VDatabase {
 	
 	function VDatabase($openPrimaryDB = false) {
 		if ($openPrimaryDB) {
-			return $this->openConnection(DB_HOST, DB_USER, DB_PWD, DB_NAME);
-		}
-	}
-	
-	function __construct($openPrimaryDB = false) {
-		if ($openPrimaryDB) {
-			return $this->openConnection(DB_HOST, DB_USER, DB_PWD, DB_NAME);
+			$this->openConnection(DB_HOST, DB_USER, DB_PWD, DB_NAME);
 		}
 	}
 	
@@ -27,8 +21,7 @@ class VDatabase {
 		//mysqli_select_db($dbName, $this->dbLink) or die($_SESSION['errMsg']="Could not select the DATABASE");
 		
 		// Create connection
-		$this->dbLink = mysqli_connect("172.17.0.19", "root", "password", "konsear_db_stage");
-		
+		$this->dbLink = mysqli_connect($hostName, $userName, $pwd, $dbName);
 		// Check connection
 		if (!$this->dbLink) {
 		    die("Connection failed: " . mysqli_connect_error());
@@ -136,3 +129,4 @@ class VDatabase {
 	
 }
 ?>
+

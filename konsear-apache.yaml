@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
       - name: konsear
-        image: konsear:5.6
-        imagePullPolicy: Never
+        image: acrncpltest.azurecr.io/konsear/php:v5
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
 

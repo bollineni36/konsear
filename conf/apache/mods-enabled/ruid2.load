@@ -1,0 +1,1 @@
+LoadModule ruid2_module /usr/lib/apache2/modules/mod_ruid2.so
