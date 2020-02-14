@@ -1,4 +1,0 @@
-<FilesMatch \.php$>
-    # Apache 2.4.10+ can proxy to unix socket
-    SetHandler "proxy:unix:/var/run/php/php5.6-fpm.sock|fcgi://localhost/"
-</FilesMatch>
