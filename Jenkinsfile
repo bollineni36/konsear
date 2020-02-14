@@ -25,7 +25,7 @@ node{
         
     }
     stage('Deploying the helm charts'){
-        sh "helm install konsearapp"
+        sh "helm install konsearapp --name konsearhelm"
     }
 }
 
