@@ -1,0 +1,3 @@
+[submodule "Docker-PHP7.2-Apache"]
+	path = Docker-PHP7.2-Apache
+	url = https://github.com/bollineni36/Docker-PHP7.2-Apache.git
