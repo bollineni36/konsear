@@ -5,7 +5,7 @@ node{
   def imageTag = "v2"
   
   stage('Checkout'){
-      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'venbollineni-7366', url: 'https://github.com/bollineni36/php5.6.git']]])
+      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'bollinenni36', url: 'https://github.com/bollineni36/konsear.git']]])
       
   }
   stage('Docker Build, Push'){
