@@ -1,7 +1,7 @@
 node{
   def Namespace = "default"
-  def repository = "acrncpltest.azurecr.io"
-  def ImageName = "jenkins/php"
+  def repository = "167250654448.dkr.ecr.us-east-1.amazonaws.com/dockertest"
+  def ImageName = "dockertest/jenkinsfiledockerimage"
   def imageTag = "v2"
   
   stage('Checkout'){
@@ -10,7 +10,7 @@ node{
   }
   stage('Docker Build, Push'){
       sh "docker build -t $repository/${ImageName}:${imageTag} ."
-      sh "docker login acrncpltest.azurecr.io "
+      sh "docker login 167250654448.dkr.ecr.us-east-1.amazonaws.com/dockertest "
       sh label: '', script: 'sleep 10'
       sh "docker push $repository/${ImageName}:${imageTag}"
       
