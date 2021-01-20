@@ -22,7 +22,7 @@ node{
         sh "helm create konsearapp"
         sh label: '', script: 'sleep 10'
         sh "sed -i 's,nginx,'acrncpltest.azurecr.io/jenkins/php',g' < ./konsearapp/values.yaml ./konsearapp/values.yaml"
-        sh "sed -i 's,stable,'v4',g' < ./konsearapp/values.yaml ./konsearapp/values.yaml"
+        sh "sed -i 's,stable,'${imageTag}',g' < ./konsearapp/values.yaml ./konsearapp/values.yaml"
         sh "sed -i 's,ClusterIP,'LoadBalancer',g' < ./konsearapp/values.yaml ./konsearapp/values.yaml"
         
     }
