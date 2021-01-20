@@ -10,6 +10,7 @@ node{
   }
   stage('Docker Build, Push'){
       sh "docker build -t $repository/${ImageName}:${imageTag} ."
+      sh "whoami"
       sh "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 167250654448.dkr.ecr.us-east-1.amazonaws.com"
 //      sh "docker login 167250654448.dkr.ecr.us-east-1.amazonaws.com/dockertest "
       sh label: '', script: 'sleep 10'
