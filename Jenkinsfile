@@ -1,7 +1,7 @@
 node{
   def Namespace = "default"
   def repository = "167250654448.dkr.ecr.us-east-1.amazonaws.com/dockertest"
-  def ImageName = "jenkinsfiledockerimage"
+//  def ImageName = "jenkinsfiledockerimage"
   def imageTag = "v4"
   
   stage('Checkout'){
@@ -9,12 +9,12 @@ node{
       
   }
   stage('Docker Build, Push'){
-      sh "docker build -t $repository/${ImageName}:${imageTag} ."
+      sh "docker build -t $repository:${imageTag} ."
       sh "whoami"
  //     sh "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 167250654448.dkr.ecr.us-east-1.amazonaws.com"
       sh "docker login $repository"
       sh label: '', script: 'sleep 10'
-      sh "docker push $repository/${ImageName}:${imageTag}"
+      sh "docker push $repository:${imageTag}"
       
       
     }
