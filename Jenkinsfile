@@ -2,7 +2,7 @@ node{
   def Namespace = "default"
   def repository = "167250654448.dkr.ecr.us-east-1.amazonaws.com/dockertest"
   def ImageName = "dockertest/jenkinsfiledockerimage"
-  def imageTag = "v2"
+  def imageTag = "v3"
   
   stage('Checkout'){
       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'bollinenni36', url: 'https://github.com/bollineni36/konsear.git']]])
